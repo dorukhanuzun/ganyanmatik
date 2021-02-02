@@ -1,0 +1,155 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Ganyanmatik{% endblock %}
+
+{% block content %}
+  <h1>Ganyanmatik Uygulamasina Hosgeldiniz.</h1>
+  <form method="POST" action="/">
+    {{ form.csrf_token }}
+    <div class="container">
+      {% for column in form.column1 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column2 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column3 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column4 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column5 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column6 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column7 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column8 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column9 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column10 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column11 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column12 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column13 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column14 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column15 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column16 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column17 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column18 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column19 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column20 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column21 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column22 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column23 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {{ form.submit }}
+    </div>
+    <hr>
+</form>
+<a href="{{url_for('reset')}}"></a>
+
+{% endblock %}

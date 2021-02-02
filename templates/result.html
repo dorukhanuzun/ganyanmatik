@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sonuclar...</title>
+</head>
+<body>
+    <h1>Sonuclar asagidaki gibidir.</h1>
+    {% for text in result %}
+    <p>{{text}}</p>
+    {% endfor %}
+    <a href="{{url_for('reset')}}">Ana sayfaya geri don</a>
+</body>
+</html>
