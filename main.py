@@ -27,37 +27,37 @@ class ClassicForm(Form):
 
 
 class GanyanForm(FlaskForm):
-    column1 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column2 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column3 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column4 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column5 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column6 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column7 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column8 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column9 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column10 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column11 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column12 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column13 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column14 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column15 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column16 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column17 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column18 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column19 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column20 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column21 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column22 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column23 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column24 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column25 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column26 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column27 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column28 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column29 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column30 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
-    column31 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column1 = FieldList(FormField(ClassicForm), min_entries=1)
+    column2 = FieldList(FormField(ClassicForm), min_entries=1)
+    column3 = FieldList(FormField(ClassicForm), min_entries=1)
+    column4 = FieldList(FormField(ClassicForm), min_entries=1)
+    column5 = FieldList(FormField(ClassicForm), min_entries=1)
+    column6 = FieldList(FormField(ClassicForm), min_entries=1)
+    column7 = FieldList(FormField(ClassicForm), min_entries=1)
+    column8 = FieldList(FormField(ClassicForm), min_entries=1)
+    column9 = FieldList(FormField(ClassicForm), min_entries=1)
+    column10 = FieldList(FormField(ClassicForm), min_entries=1)
+    column11 = FieldList(FormField(ClassicForm), min_entries=1)
+    column12 = FieldList(FormField(ClassicForm), min_entries=1)
+    column13 = FieldList(FormField(ClassicForm), min_entries=1)
+    column14 = FieldList(FormField(ClassicForm), min_entries=1)
+    column15 = FieldList(FormField(ClassicForm), min_entries=1)
+    column16 = FieldList(FormField(ClassicForm), min_entries=1)
+    column17 = FieldList(FormField(ClassicForm), min_entries=1)
+    column18 = FieldList(FormField(ClassicForm), min_entries=1)
+    column19 = FieldList(FormField(ClassicForm), min_entries=1)
+    column20 = FieldList(FormField(ClassicForm), min_entries=1)
+    column21 = FieldList(FormField(ClassicForm), min_entries=1)
+    column22 = FieldList(FormField(ClassicForm), min_entries=1)
+    column23 = FieldList(FormField(ClassicForm), min_entries=1)
+    column24 = FieldList(FormField(ClassicForm), min_entries=1)
+    column25 = FieldList(FormField(ClassicForm), min_entries=1)
+    column26 = FieldList(FormField(ClassicForm), min_entries=1)
+    column27 = FieldList(FormField(ClassicForm), min_entries=1)
+    column28 = FieldList(FormField(ClassicForm), min_entries=1)
+    column29 = FieldList(FormField(ClassicForm), min_entries=1)
+    column30 = FieldList(FormField(ClassicForm), min_entries=1)
+    column31 = FieldList(FormField(ClassicForm), min_entries=1)
     submit = SubmitField(label="Gonder")
 
 
@@ -68,7 +68,7 @@ def home():
     global total_point
     total_point = []
     form = GanyanForm()
-    if request.method == "POST":
+    if form.is_submitted():
         column_1 = form.column1.data
         column_2 = form.column2.data
         column_3 = form.column3.data
@@ -180,6 +180,8 @@ def home():
                f"Onuncu gelen at: {sorted_values[9][0]} ve puani :{sorted_values[9][1]}\n"]
 
         return render_template("result.html", result=text)
+    else:
+        print("Lul")
 
     return render_template("index.html", form=form)
 
