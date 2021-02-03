@@ -57,6 +57,7 @@ class GanyanForm(FlaskForm):
     column28 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
     column29 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
     column30 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column31 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
     submit = SubmitField(label="Gonder")
 
 
@@ -98,6 +99,7 @@ def home():
         column_28 = form.column28.data
         column_29 = form.column29.data
         column_30 = form.column30.data
+        column_31 = form.column31.data
         total.append(column_1)
         total.append(column_2)
         total.append(column_3)
@@ -128,7 +130,8 @@ def home():
         total.append(column_28)
         total.append(column_29)
         total.append(column_30)
-        for i in range(30):
+        total.append(column_31)
+        for i in range(31):
             for point in points:
                 index = points[::-1].index(point) + 1
                 if total[i][0][point] != None:
