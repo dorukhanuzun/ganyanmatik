@@ -146,10 +146,55 @@
     </div>
     <hr>
     <div class="container">
+      {% for column in form.column24 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column25 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column26 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column27 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column28 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column29 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
+      {% for column in form.column30 %}
+      {{ column }}
+      {% endfor %}
+    </div>
+    <hr>
+    <div class="container">
       {{ form.submit }}
     </div>
     <hr>
 </form>
-<a href="{{url_for('reset')}}"></a>
+<div class="container">
+  <a href="{{url_for('home')}}">Resetle</a>
+</div>
+
 
 {% endblock %}

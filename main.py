@@ -50,6 +50,13 @@ class GanyanForm(FlaskForm):
     column21 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
     column22 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
     column23 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column24 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column25 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column26 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column27 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column28 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column29 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
+    column30 = FieldList(FormField(ClassicForm), min_entries=1, max_entries=10)
     submit = SubmitField(label="Gonder")
 
 
@@ -84,6 +91,13 @@ def home():
         column_21 = form.column21.data
         column_22 = form.column22.data
         column_23 = form.column23.data
+        column_24 = form.column24.data
+        column_25 = form.column25.data
+        column_26 = form.column26.data
+        column_27 = form.column27.data
+        column_28 = form.column28.data
+        column_29 = form.column29.data
+        column_30 = form.column30.data
         total.append(column_1)
         total.append(column_2)
         total.append(column_3)
@@ -107,7 +121,14 @@ def home():
         total.append(column_21)
         total.append(column_22)
         total.append(column_23)
-        for i in range(23):
+        total.append(column_24)
+        total.append(column_25)
+        total.append(column_26)
+        total.append(column_27)
+        total.append(column_28)
+        total.append(column_29)
+        total.append(column_30)
+        for i in range(30):
             for point in points:
                 index = points[::-1].index(point) + 1
                 if total[i][0][point] != None:
@@ -163,15 +184,6 @@ def home():
 @app.route('/result')
 def result():
     return render_template('result.html')
-
-
-@app.route('/reset')
-def reset():
-    global total
-    total = []
-    global total_point
-    total_point = []
-    return redirect(url_for("home"))
 
 
 if __name__ == '__main__':
